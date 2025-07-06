@@ -1,6 +1,10 @@
 # TrabajoFinalModulo3
 Trabajo práctico - Contrato SimpleSwap y tokens ERC20
 
+Hash de transaccion: (con el swapverifier)
+0xc0fa7d91d1cc9806e6b4b52c70fdbddc4278b0805502feae50eefe5bbdaddf92
+authors N°120 "EZE"
+ 
 Implementación de un DEX simple (SimpleSwap) y dos tokens ERC20 (BotiCoin y PepaCoin).
 
 ## Contenido
