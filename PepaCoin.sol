@@ -5,28 +5,15 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract PepaCoin is ERC20, Ownable {
-    /**
-     * @dev Constructor que inicializa el contrato del token.
-     * @param initialSupply La cantidad inicial de tokens a crear.
-     */
-    constructor(uint256 initialSupply) ERC20("PepaCoin", "Pepa") Ownable(msg.sender) {
-        _mint(msg.sender, initialSupply * (10 ** decimals()));
+    constructor(uint256 initialSupply) ERC20("PepaCoin", "PEPA") Ownable(msg.sender) {
+        _mint(msg.sender, initialSupply * 10**decimals()); // Eliminamos paréntesis redundantes
     }
 
-    /**
-     * @dev Función para crear más tokens (solo el dueño puede hacerlo).
-     * @param to Dirección que recibirá los nuevos tokens.
-     * @param amount Cantidad de tokens a crear.
-     */
-    function mint(address to, uint256 amount) public onlyOwner {
+    function mint(address to, uint256 amount) external onlyOwner { // Cambiado a external
         _mint(to, amount);
     }
 
-    /**
-     * @dev Función para quemar tokens (eliminarlos de circulación).
-     * @param amount Cantidad de tokens a quemar.
-     */
-    function burn(uint256 amount) public {
+    function burn(uint256 amount) external { // Cambiado a external
         _burn(msg.sender, amount);
     }
 }
